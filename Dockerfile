@@ -20,4 +20,4 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER rosuser
 WORKDIR /home/rosuser
 COPY --chown=rosuser:rosuser .screenrc /home/rosuser/
-CMD /bin/bash -c "source /opt/ros/melodic/setup.bash; source /home/rosuser/catkin_ws/devel/setup.bash"
+RUN echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
