@@ -13,6 +13,6 @@ vbell on
 windowlist title  '%{u .r}Num Flags Title%=[0-9] select the number [movement] j,C-n:Down k,C-p:Up (C-)f:PageDown (C-)b:PageUp'
 windowlist string '%{.y}%3n %{.y}%f%09=%{dg} %t %='
   
-caption always '%?%F%{= gW}%:%{= Kk}%?%2n%f%07=%t%='
-hardstatus alwayslastline '%m/%d %02c:%s %{= .y}%H%{-} %L=%-w%45L>%{=u y.}%n %t%{-}%+w %-17<%=%{= .y}(%l)'
-#hardstatus alwayslastline '%{= kw}%02c:%s %{= .y}%H %L=%{= .b}%-w%46>%{= .r}%n %t*%{= .b}%+w%-16=%{= .y}[%l]'
+caption always '%?%F%{= rW}%:%{= Kk}%?%2n%f%07=%t%='
+hardstatus alwayslastline '%m/%d %02c:%s rosenv %{= .w}%L=%-w%45L>%{=u y.}%n %t%{-}%+w %-17<%=%{= .y}(%l)'
+#hardstatus alwayslastline '%{= kw}%02c:%s %{= .r}%H %L=%{= .b}%-w%46>%{= .r}%n %t*%{= .b}%+w%-16=%{= .y}[%l]'

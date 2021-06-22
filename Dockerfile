@@ -9,7 +9,7 @@ RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main"
 RUN apt-get update && apt-get install -y ros-melodic-desktop-full && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update && apt-get install -y vim-nox ros-melodic-jsk-visualization ros-melodic-pcl-ros \
-    vim-nox screen git \
+    vim-nox screen git wget \
     && rm -rf /var/lib/apt/lists/*
 
 RUN groupadd -g 1000 rosuser && \
@@ -17,7 +17,10 @@ RUN groupadd -g 1000 rosuser && \
 RUN echo 'rosuser:rosuser' | chpasswd
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
+COPY exa /usr/local/bin
+
 USER rosuser
 WORKDIR /home/rosuser
-COPY --chown=rosuser:rosuser .screenrc /home/rosuser/
+COPY --chown=rosuser:rosuser _screenrc /home/rosuser/.screenrc
+
 RUN echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
